@@ -41,17 +41,17 @@
 		<script>
 			$(document).ready(function() {
 				//Country
-			  	$.get('{{site.baseurl}}/data/country.html', function(data){
+			  	$.get('/data/country.html', function(data){
 					$('select[name=country]').html(data).selectpicker('refresh');
 				});
 
 				//Region
-			  	$.get('{{site.baseurl}}/data/region.html', function(data){
+			  	$.get('/data/region.html', function(data){
 					$('select[name=region]').html(data).selectpicker('refresh');
 				});
 
 				//City
-			  	$.get('{{site.baseurl}}/data/city.html', function(data){
+			  	$.get('/data/city.html', function(data){
 					$('select[name=city]').html(data).selectpicker('refresh');
 				});
 			})
