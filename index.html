@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Myanmar - Country|Region|City</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.css">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Myanmar - (Country,Region,City)</h1>
+			<hr>
+			<div class="row">
+				<div class="col-md-4">
+					<select class="selectpicker"  data-size="5" data-live-search="true" name="country"></select>
+				</div>
+
+				<div class="col-md-4">
+					<select class="selectpicker"  data-size="5" data-live-search="true" name="region"></select>
+				</div>
+
+				<div class="col-md-4">
+					<select class="selectpicker"  data-size="5" data-live-search="true" name="city"></select>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Get all the collection on <a href="">github</a></h3>
+				</div>
+			</div>
+		</div>	
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/js/bootstrap-select.min.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				//Country
+			  	$.get('/data/country.html', function(data){
+					$('select[name=country]').html(data).selectpicker('refresh');
+				});
+
+				//Region
+			  	$.get('/data/region.html', function(data){
+					$('select[name=region]').html(data).selectpicker('refresh');
+				});
+
+				//City
+			  	$.get('/data/city.html', function(data){
+					$('select[name=city]').html(data).selectpicker('refresh');
+				});
+			})
+		</script>
+	</body>
+</html>
